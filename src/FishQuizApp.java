@@ -85,6 +85,17 @@ public class FishQuizApp {
                 new Answer("Yes", +20), new Answer("No", -15), new Answer("Possibly", +10)));
         questions.add(new Question("Does the thought of being called a 'punk bass fish' upset you?",
                 new Answer("Yes, it would.", -10), new Answer("No, it wouldn't", +10), new Answer("Large or small mouth bass?", +5)));
+
+        questions.add(new Question("Gills. Thoughts?",
+                new Answer("You've piqued my interest", +10), new Answer("...what about them?", -10), new Answer("...go on...", +5)));
+        questions.add(new Question("Consider the following, you acquire a new betta fish, which tank would you put it in?",
+                new Answer("Clearly one with space and filtering.", +10), new Answer("A bowl with water is a bowl with water.", -10), new Answer("If I pick a good enough place, can we be roomies?", +20)));
+        questions.add(new Question("How many triangles do you know? As a friend?",
+                new Answer("At least 4.", +10), new Answer("I thought this was about fish.", -10), new Answer("Do triangular fish count?", +5)));
+        questions.add(new Question("You come across a goldfish. A common, standard fish. What do you think of it?",
+                new Answer("Classic carp body, ol' reliable", +5), new Answer("The most boring fish ever, duh.", -10), new Answer("My fishy brethren, I salute thee.", +10)));
+        questions.add(new Question("What do you consider a fish to be?",
+                new Answer("A fish is a creature with a wish.", +10), new Answer("The swimmy ones.", -10), new Answer("...they're fish, who cares?", +5)));
     }
 
     private JPanel createTitlePanel() {
