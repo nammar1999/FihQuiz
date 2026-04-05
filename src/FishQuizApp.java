@@ -20,7 +20,7 @@ public class FishQuizApp {
 
     public FishQuizApp() {
         frame = new JFrame("Fish: Find Your True Self");
-        frame.setSize(500, 450);
+        frame.setSize(1000, 750);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         cardLayout = new CardLayout();
@@ -41,6 +41,7 @@ public class FishQuizApp {
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.Y_AXIS));
         topPanel.add(fishMeter);
         topPanel.add(imageLabel);
+
 
         frame.add(topPanel, BorderLayout.NORTH);
 
@@ -116,7 +117,8 @@ public class FishQuizApp {
             cardLayout.show(mainPanel, "Q0");
         });
 
-        JPanel inputPanel = new JPanel(new GridLayout(2, 1));
+        JPanel inputPanel = new JPanel(new GridLayout(3, 1));
+        inputPanel.add(new JLabel("Take this 10 question quiz to find your fishiness.", SwingConstants.CENTER));
         inputPanel.add(new JLabel("Enter your name:", SwingConstants.CENTER));
         inputPanel.add(nameField);
 
