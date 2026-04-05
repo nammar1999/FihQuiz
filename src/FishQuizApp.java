@@ -191,7 +191,7 @@ public class FishQuizApp {
         if (fishiness >= 0 && fishiness <= 25) result = " you're not fishy. Frankly, you're dry. REAL dry.";
         else if (fishiness >= 26 && fishiness <= 50) result = "  you're moderately fishy. You dabble in the concept of fish.";
         else if (fishiness >= 51 && fishiness <= 75) result = " you are no longer bound by the land laws.";
-        else result = ", YOU ARE EXTREMELY FISH. Return to ocean IMMEDIATELY!";
+        else result = ", YOU ARE EXTREMELY FISH. Return to the ocean IMMEDIATELY!";
 
         nameLabel.setText(userName + ", " + result);
     }
