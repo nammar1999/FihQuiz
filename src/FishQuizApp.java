@@ -4,22 +4,21 @@ import java.util.*;
 
 public class FishQuizApp {
 
-    private JFrame frame;
-    private JPanel mainPanel;
-    private CardLayout cardLayout;
+    private final JPanel mainPanel;
+    private final CardLayout cardLayout;
 
     private int fishiness = 50;
     private int questionIndex = 0;
 
-    private JProgressBar fishMeter;
+    private final JProgressBar fishMeter;
     private JLabel nameLabel;
-    private JLabel imageLabel; // Single label for both trout & results
+    private final JLabel imageLabel; // Single label for both trout & results
     private String userName = "";
 
-    private java.util.List<Question> questions = new ArrayList<>();
+    private final java.util.List<Question> questions = new ArrayList<>();
 
     public FishQuizApp() {
-        frame = new JFrame("Fish: Find Your True Self");
+        JFrame frame = new JFrame("Fish: Find Your True Self");
         frame.setSize(1000, 750);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -33,7 +32,7 @@ public class FishQuizApp {
         fishMeter.setString("Fishy-o-meter");
 
         // Image label (trout placeholder at first)
-        imageLabel = new JLabel(loadIcon("/result3.jpg", 250, 200));
+        imageLabel = new JLabel(loadIcon("/result3.jpg"));
         imageLabel.setHorizontalAlignment(SwingConstants.CENTER);
         imageLabel.setVerticalAlignment(SwingConstants.CENTER);
 
@@ -63,11 +62,11 @@ public class FishQuizApp {
     }
 
     // Load and scale images from resources
-    private ImageIcon loadIcon(String resourcePath, int width, int height) {
+    private ImageIcon loadIcon(String resourcePath) {
         java.net.URL imgURL = getClass().getResource(resourcePath);
         if (imgURL != null) {
             Image img = new ImageIcon(imgURL).getImage();
-            Image scaled = img.getScaledInstance(width, height, Image.SCALE_SMOOTH);
+            Image scaled = img.getScaledInstance(250, 200, Image.SCALE_SMOOTH);
             return new ImageIcon(scaled);
         } else {
             System.err.println("WARNING: Could not find resource: " + resourcePath);
@@ -113,7 +112,7 @@ public class FishQuizApp {
             if (userName.isEmpty()) userName = "Mysterious Fish";
             nameLabel.setText("Player: " + userName);
             resetQuizState();
-            imageLabel.setIcon(loadIcon("/result3.jpg", 250, 200)); // Reset trout
+            imageLabel.setIcon(loadIcon("/result3.jpg")); // Reset trout
             cardLayout.show(mainPanel, "Q0");
         });
 
@@ -159,7 +158,7 @@ public class FishQuizApp {
 
         restartButton.addActionListener(e -> {
             resetQuizState();
-            imageLabel.setIcon(loadIcon("/result3.jpg", 250, 200));
+            imageLabel.setIcon(loadIcon("/result3.jpg"));
             cardLayout.show(mainPanel, "TITLE");
         });
 
@@ -177,7 +176,7 @@ public class FishQuizApp {
 
     private void answerQuestion(int value) {
         fishiness += value;
-        fishiness = Math.max(0, Math.min(100, fishiness));
+        fishiness = Math.clamp(fishiness, 0, 100);
 
         fishMeter.setValue(fishiness);
         fishMeter.setString("Fishy-o-meter: " + fishiness + "%");
@@ -193,10 +192,10 @@ public class FishQuizApp {
     }
 
     private void updateResultImage() {
-        if (fishiness >= 0 && fishiness <= 25) imageLabel.setIcon(loadIcon("/result1.jpg", 250, 200));
-        else if (fishiness >= 26 && fishiness <= 50) imageLabel.setIcon(loadIcon("/result2.jpg", 250, 200));
-        else if (fishiness >= 51 && fishiness <= 75) imageLabel.setIcon(loadIcon("/result3.jpg", 250, 200));
-        else imageLabel.setIcon(loadIcon("/result4.png", 250, 200));
+        if (fishiness >= 0 && fishiness <= 25) imageLabel.setIcon(loadIcon("/result1.jpg"));
+        else if (fishiness >= 26 && fishiness <= 50) imageLabel.setIcon(loadIcon("/result2.jpg"));
+        else if (fishiness >= 51 && fishiness <= 75) imageLabel.setIcon(loadIcon("/result3.jpg"));
+        else imageLabel.setIcon(loadIcon("/result4.png"));
     }
 
     private void showResult() {
