@@ -93,7 +93,7 @@ public class FishQuizApp {
         questions.add(new Question("How many triangles do you know? As a friend?",
                 new Answer("At least 4.", +10), new Answer("I thought this was about fish.", -10), new Answer("Do triangular fish count?", +5)));
         questions.add(new Question("You come across a goldfish. A common, standard fish. What do you think of it?",
-                new Answer("Classic carp body, ol' reliable", +5), new Answer("The most boring fish ever, duh.", -10), new Answer("My fishy brethren, I salute thee.", +10)));
+                new Answer("Classic carp body, ol' reliable, beautiful man", +5), new Answer("The most boring fish ever, duh.", -10), new Answer("My fishy brethren, I salute thee.", +10)));
         questions.add(new Question("What do you consider a fish to be?",
                 new Answer("A fish is a creature with a wish.", +20), new Answer("The swimmy ones.", +10), new Answer("...they're fish, who cares?", -10)));
     }
