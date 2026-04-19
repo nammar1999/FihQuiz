@@ -95,7 +95,7 @@ public class FishQuizApp {
         questions.add(new Question("You come across a goldfish. A common, standard fish. What do you think of it?",
                 new Answer("Classic carp body, ol' reliable", +5), new Answer("The most boring fish ever, duh.", -10), new Answer("My fishy brethren, I salute thee.", +10)));
         questions.add(new Question("What do you consider a fish to be?",
-                new Answer("A fish is a creature with a wish.", +10), new Answer("The swimmy ones.", -10), new Answer("...they're fish, who cares?", +5)));
+                new Answer("A fish is a creature with a wish.", +20), new Answer("The swimmy ones.", +10), new Answer("...they're fish, who cares?", -10)));
     }
 
     private JPanel createTitlePanel() {
