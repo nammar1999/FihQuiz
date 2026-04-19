@@ -87,7 +87,7 @@ public class FishQuizApp {
                 new Answer("Yes, it would.", -10), new Answer("No, it wouldn't", +10), new Answer("Large or small mouth bass?", +5)));
 
         questions.add(new Question("Gills. Thoughts?",
-                new Answer("You've piqued my interest", +10), new Answer("...what about them?", -10), new Answer("...go on...", +5)));
+                new Answer("You've piqued my interest", +10), new Answer("Okaaaay...what about them?", -10), new Answer("...go on...", +5)));
         questions.add(new Question("Consider the following, you acquire a new betta fish, which tank would you put it in?",
                 new Answer("Clearly one with space and filtering.", +10), new Answer("A bowl with water is a bowl with water.", -10), new Answer("If I pick a good enough place, can we be roomies?", +20)));
         questions.add(new Question("How many triangles do you know? As a friend?",
